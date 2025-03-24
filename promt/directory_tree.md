@@ -1,7 +1,7 @@
 # Структура директорий
 
 ```
-- ./assets/
+- ../assets/
   - sprite/
     - character/
       - Body/
