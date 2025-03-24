@@ -43,12 +43,13 @@ const hairColors = [
 
 const eyeColors = ['Blue', 'Brown', 'Gray', 'Green', 'Orange', 'Purple', 'Red', 'Yellow'];
 
+// Torso configs (оставляем как есть)
 const torsoOptions = {
     'Human_female': [
         'Blouse', 'ChainmailShirt', 'IrishDress', 'LongSleeveBlouse', 'LongSleeveShirt', 
         'PirateShirt', 'ScoopNeck', 'SleevelessShirt', 'SlitDress', 'Apron', 'Bodice', 
         'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 'Robe', 'Sweater', 
-        'Tabard', 'Tunic', 'CloakWithClip', 'CloakWithTie', 'Tattered CloakwithClip', 
+        'Tabard', 'Tunic', 'CloakWithClip', 'CloakWithTie', 'TatteredCloakwithClip', 
         'TatteredCloakWithTie', 'TrimmedCloakWithClip', 'TrimmedCloakWithTie'
     ],
     'Human_male': [
@@ -113,7 +114,7 @@ const torsoColors = {
         'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
             'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
             'Walnut', 'White', 'Yellow'],
-        'SleevelessShirt': [], // Оставляем пустым для мужского персонажа
+        'SleevelessShirt': [],
         'Breastplate': ['Gold', 'Silver'],
         'Iverness': ['Black'],
         'LeatherChestpiece': [],
@@ -124,4 +125,279 @@ const torsoColors = {
     }
 };
 
+// Глобальные переменные для текущих цветов
 let currentTorsoColor = null;
+let currentHeadColor = null;
+let currentFaceColor = null;
+let currentNeckColor = null;
+let currentArmsColor = null;
+let currentHandsColor = null;
+let currentShouldersColor = null;
+let currentWaistColor = null;
+let currentLegsColor = null;
+let currentFeetColor = null;
+let currentPropsColor = null;
+
+// Head configs
+const headOptions = {
+    'Human_female': [
+        'None', 'ChainHood', 'FeatherCap', 'FullHelm', 'KettleHelmet', 'KettleHood', 
+        'LeatherHood', 'LegionHelm1', 'MagicianHat', 'SpikedHelm', 'Tiara'
+    ],
+    'Human_male': [
+        'None', 'Bowler', 'ChainHood', 'FeatherCap', 'FullHelm', 'KettleHelmet', 
+        'KettleHood', 'LeatherHood', 'SpikedHelm', 'TopHat'
+    ]
+};
+
+const headColors = {
+    'Human_female': {
+        'None': [],
+        'ChainHood': [],
+        'FeatherCap': [],
+        'FullHelm': [],
+        'KettleHelmet': [],
+        'KettleHood': [],
+        'LeatherHood': [],
+        'LegionHelm1': ['Steel'],
+        'MagicianHat': [],
+        'SpikedHelm': [],
+        'Tiara': []
+    },
+    'Human_male': {
+        'None': [],
+        'Bowler': [],
+        'ChainHood': [],
+        'FeatherCap': [],
+        'FullHelm': [],
+        'KettleHelmet': [],
+        'KettleHood': [],
+        'LeatherHood': [],
+        'SpikedHelm': [],
+        'TopHat': []
+    }
+};
+
+// Face configs
+const faceOptions = {
+    'Human_female': [
+        'None', 'FormalGlasses', 'Mask', 'Monocle', 'NerdGlasses', 'SecretaryGlasses', 'Sunglasses'
+    ],
+    'Human_male': [
+        'None', 'FormalGlasses', 'Mask', 'Monocle', 'NerdGlasses', 'SecretaryGlasses', 'Sunglasses'
+    ]
+};
+
+const faceColors = {
+    'Human_female': {
+        'None': [],
+        'FormalGlasses': [],
+        'Mask': [],
+        'Monocle': [],
+        'NerdGlasses': [],
+        'SecretaryGlasses': [],
+        'Sunglasses': []
+    },
+    'Human_male': {
+        'None': [],
+        'FormalGlasses': [],
+        'Mask': [],
+        'Monocle': [],
+        'NerdGlasses': [],
+        'SecretaryGlasses': [],
+        'Sunglasses': []
+    }
+};
+
+// Neck configs
+const neckOptions = {
+    'Human_female': [
+        'None', 'Necklace', 'Pendant'
+    ],
+    'Human_male': [
+        'None', 'Bowtie', 'Scarf', 'Tie'
+    ]
+};
+
+const neckColors = {
+    'Human_female': {
+        'None': [],
+        'Necklace': [],
+        'Pendant': []
+    },
+    'Human_male': {
+        'None': [],
+        'Bowtie': [],
+        'Scarf': ['Red'],
+        'Tie': []
+    }
+};
+
+// Arms configs
+const armsOptions = {
+    'Human_female': [
+        'None', 'Bracers', 'Vambrace'
+    ],
+    'Human_male': [
+        'None', 'Bracers', 'Vambrace'
+    ]
+};
+
+const armsColors = {
+    'Human_female': {
+        'None': [],
+        'Bracers': [],
+        'Vambrace': ['Gold', 'Silver']
+    },
+    'Human_male': {
+        'None': [],
+        'Bracers': [],
+        'Vambrace': ['Gold', 'Silver']
+    }
+};
+
+// Hands configs
+const handsOptions = {
+    'Human_female': [
+        'None', 'Gauntlets'
+    ],
+    'Human_male': [
+        'None', 'Gauntlets'
+    ]
+};
+
+const handsColors = {
+    'Human_female': {
+        'None': [],
+        'Gauntlets': ['Gold', 'Silver']
+    },
+    'Human_male': {
+        'None': [],
+        'Gauntlets': ['Gold', 'Silver']
+    }
+};
+
+// Shoulders configs
+const shouldersOptions = {
+    'Human_female': [
+        'None', 'Pauldrons'
+    ],
+    'Human_male': [
+        'None', 'Pauldrons', 'SingleShoulder'
+    ]
+};
+
+const shouldersColors = {
+    'Human_female': {
+        'None': [],
+        'Pauldrons': []
+    },
+    'Human_male': {
+        'None': [],
+        'Pauldrons': [],
+        'SingleShoulder': []
+    }
+};
+
+// Waist configs
+const waistOptions = {
+    'Human_female': [
+        'None', 'ClothBelt', 'LeatherBelt'
+    ],
+    'Human_male': [
+        'None', 'ClothBelt', 'FormalBelt', 'LeatherBelt'
+    ]
+};
+
+const waistColors = {
+    'Human_female': {
+        'None': [],
+        'ClothBelt': [],
+        'LeatherBelt': []
+    },
+    'Human_male': {
+        'None': [],
+        'ClothBelt': [],
+        'FormalBelt': [],
+        'LeatherBelt': []
+    }
+};
+
+// Legs configs
+const legsOptions = {
+    'Human_female': [
+        'None', 'BelleSkirt', 'Greaves', 'LegionSkirt', 'Pants', 'ShortShorts', 'SlitSkirt', 'StraightSkirt'
+    ],
+    'Human_male': [
+        'None', 'BaggyPants', 'Greaves', 'RobeSkirt', 'Slacks', 'SlacksWithStripes', 'TightPants'
+    ]
+};
+
+const legsColors = {
+    'Human_female': {
+        'None': [],
+        'BelleSkirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 'White', 'Yellow'],
+        'Greaves': ['Gold', 'Silver'],
+        'LegionSkirt': [],
+        'Pants': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 'White', 'Yellow'],
+        'ShortShorts': ['BlueGray'],
+        'SlitSkirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 'White', 'Yellow'],
+        'StraightSkirt': ['Maroon']
+    },
+    'Human_male': {
+        'None': [],
+        'BaggyPants': [],
+        'Greaves': ['Gold', 'Silver'],
+        'RobeSkirt': [],
+        'Slacks': ['Green'],
+        'SlacksWithStripes': [],
+        'TightPants': ['Black', 'Blue']
+    }
+};
+
+// Feet configs
+const feetOptions = {
+    'Human_female': [
+        'None', 'ArmoredBoots', 'Ghillies', 'LongBoots', 'Sandals', 'Shoes', 'Slippers'
+    ],
+    'Human_male': [
+        'None', 'ArmoredBoots', 'Shoes'
+    ]
+};
+
+const feetColors = {
+    'Human_female': {
+        'None': [],
+        'ArmoredBoots': ['Gold', 'Silver'],
+        'Ghillies': [],
+        'LongBoots': [],
+        'Sandals': [],
+        'Shoes': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 'White', 'Yellow'],
+        'Slippers': []
+    },
+    'Human_male': {
+        'None': [],
+        'ArmoredBoots': ['Gold', 'Silver'],
+        'Shoes': ['Brown']
+    }
+};
+
+// Props configs
+const propsOptions = {
+    'Human_female': ['None'],
+    'Human_male': ['None', 'Cane']
+};
+
+const propsColors = {
+    'Human_female': {
+        'None': []
+    },
+    'Human_male': {
+        'None': [],
+        'Cane': []
+    }
+};

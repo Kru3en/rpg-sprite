@@ -12,6 +12,16 @@ function updatePreview() {
     const hairColor = document.getElementById('hairColor').value;
     const eyes = document.getElementById('eyes').value;
     const torso = document.getElementById('torso').value;
+    const head = document.getElementById('head').value;
+    const face = document.getElementById('face').value;
+    const neck = document.getElementById('neck').value;
+    const arms = document.getElementById('arms').value;
+    const hands = document.getElementById('hands').value;
+    const shoulders = document.getElementById('shoulders').value;
+    const waist = document.getElementById('waist').value;
+    const legs = document.getElementById('legs').value;
+    const feet = document.getElementById('feet').value;
+    const props = document.getElementById('props').value;
     const animation = document.getElementById('animation').value;
 
     directions.forEach(direction => {
@@ -20,22 +30,34 @@ function updatePreview() {
     });
 
     const layers = [
-        { src: `${basePath}Body/Base/${gender}/${skin}/${animation}.png`, class: 'body' },
-        { src: `${basePath}Body/Hair/${gender}/${hairStyle}/${hairColor}${hairStyle === 'Extra Long' ? '/Front' : ''}/${animation}.png`, class: 'hair' },
-        { src: `${basePath}Body/Eyes/${gender}/${eyes}/${animation}.png`, class: 'eyes' },
-        { src: getTorsoPath(gender, torso, animation), class: 'torso' } // Убрали hairColor
+        { src: `${basePath}Body/Base/${gender}/${skin}/${animation}.png`, class: 'body', condition: true },
+        { src: `${basePath}Body/Eyes/${gender}/${eyes}/${animation}.png`, class: 'eyes', condition: true },
+        { src: getLegsPath(gender, legs, animation), class: 'legs', condition: legs !== 'None' },
+        { src: getFeetPath(gender, feet, animation), class: 'feet', condition: feet !== 'None' },
+        { src: getTorsoPath(gender, torso, animation), class: 'torso', condition: torso !== 'None' },
+        { src: getArmsPath(gender, arms, animation), class: 'arms', condition: arms !== 'None' },
+        { src: getHandsPath(gender, hands, animation), class: 'hands', condition: hands !== 'None' },
+        { src: getShouldersPath(gender, shoulders, animation), class: 'shoulders', condition: shoulders !== 'None' },
+        { src: getWaistPath(gender, waist, animation), class: 'waist', condition: waist !== 'None' },
+        { src: getNeckPath(gender, neck, animation), class: 'neck', condition: neck !== 'None' },
+        { src: `${basePath}Body/Hair/${gender}/${hairStyle}/${hairColor}${hairStyle === 'Extra Long' ? '/Front' : ''}/${animation}.png`, class: 'hair', condition: true },
+        { src: getHeadPath(gender, head, animation), class: 'head', condition: head !== 'None' },
+        { src: getFacePath(gender, face, animation), class: 'face', condition: face !== 'None' },
+        { src: getPropsPath(gender, props, animation), class: 'props', condition: props !== 'None' }
     ];
 
     directions.forEach(direction => {
         const dirContainer = document.getElementById(`dir-${direction}`);
         layers.forEach(layer => {
-            const img = document.createElement('img');
-            img.src = layer.src;
-            img.className = layer.class;
-            img.style.objectFit = 'none'; // Prevent scaling artifacts
-            img.style.width = `${frameWidth}px`; // Lock to sprite size
-            img.style.height = `${frameHeight}px`;
-            dirContainer.appendChild(img);
+            if (layer.condition) {
+                const img = document.createElement('img');
+                img.src = layer.src;
+                img.className = layer.class;
+                img.style.objectFit = 'none';
+                img.style.width = `${frameWidth}px`;
+                img.style.height = `${frameHeight}px`;
+                dirContainer.appendChild(img);
+            }
         });
     });
 
@@ -49,16 +71,15 @@ function updatePreview() {
             const yOffset = -(directionRows[direction] * frameHeight);
 
             if (animation === 'idle') {
-                const tiltFactor = Math.sin(currentFrame * 0.1) * 5; // Амплитуда наклона ±5 градусов
-                const flipDirection = tiltFactor >= 0 ? 1 : -1; // Strictly 1 or -1 for proper mirroring
+                const tiltFactor = Math.sin(currentFrame * 0.1) * 5;
+                const flipDirection = tiltFactor >= 0 ? 1 : -1;
                 imgs.forEach(img => {
                     img.style.imageRendering = 'pixelated';
-                    img.style.transform = `rotate(${tiltFactor}deg) scaleX(${flipDirection})`; // Proper flip
+                    img.style.transform = `rotate(${tiltFactor}deg) scaleX(${flipDirection})`;
                     img.style.transformOrigin = 'center bottom';
                     img.style.objectPosition = `0px ${yOffset}px`;
                 });
             } else {
-                // Normal sprite sheet animation
                 const xOffset = -(currentFrame * frameWidth);
                 imgs.forEach(img => {
                     img.style.objectPosition = `${xOffset}px ${yOffset}px`;

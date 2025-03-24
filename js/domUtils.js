@@ -34,48 +34,108 @@ function updateAnimations() {
     });
     updateHairStyles();
     populateSelect('torso', torsoOptions[gender]);
-    updateTorsoColorControls(); // Добавляем вызов для генерации кнопок
+    populateSelect('head', headOptions[gender]);
+    populateSelect('face', faceOptions[gender]);
+    populateSelect('neck', neckOptions[gender]);
+    populateSelect('arms', armsOptions[gender]);
+    populateSelect('hands', handsOptions[gender]);
+    populateSelect('shoulders', shouldersOptions[gender]);
+    populateSelect('waist', waistOptions[gender]);
+    populateSelect('legs', legsOptions[gender]);
+    populateSelect('feet', feetOptions[gender]);
+    populateSelect('props', propsOptions[gender]);
+    updateTorsoColorControls();
+    updateHeadColorControls();
+    updateFaceColorControls();
+    updateNeckColorControls();
+    updateArmsColorControls();
+    updateHandsColorControls();
+    updateShouldersColorControls();
+    updateWaistColorControls();
+    updateLegsColorControls();
+    updateFeetColorControls();
+    updatePropsColorControls();
     updatePreview();
 }
 
-function updateTorsoColorControls() {
+// Универсальная функция для генерации кнопок цвета
+function updateColorControls(part, options, currentColor) {
     const gender = document.getElementById('gender').value;
-    const torso = document.getElementById('torso').value;
-    const container = document.getElementById('torso-color-controls');
+    const partValue = document.getElementById(part).value;
+    const container = document.getElementById(`${part}-color-controls`);
     container.innerHTML = ''; // Очищаем контейнер
 
-    const colors = torsoColors[gender][torso] || [];
+    const colors = options[gender][partValue] || [];
 
     if (colors.length === 0) {
-        // Если цветов нет, показываем сообщение или скрываем контейнер
         container.innerHTML = '<p>Нет доступных цветов</p>';
-        currentTorsoColor = null; // Сбрасываем текущий цвет
+        window[currentColor] = null; // Сбрасываем текущий цвет
         return;
     }
 
-    // Создаём кнопки для каждого цвета
     colors.forEach(color => {
         const btn = document.createElement('button');
-        btn.className = 'torso-color-btn';
+        btn.className = 'torso-color-btn'; // Используем тот же класс для стилей
         btn.textContent = color;
         btn.onclick = () => {
-            currentTorsoColor = color;
-            // Убираем активный класс у всех кнопок
-            document.querySelectorAll('.torso-color-btn').forEach(b => b.classList.remove('active'));
-            // Добавляем активный класс к нажатой кнопке
+            window[currentColor] = color;
+            document.querySelectorAll(`#${part}-color-controls .torso-color-btn`).forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             updatePreview();
         };
-        // Если цвет текущий, делаем кнопку активной
-        if (color === currentTorsoColor) {
+        if (color === window[currentColor]) {
             btn.classList.add('active');
         }
         container.appendChild(btn);
     });
 
-    // Если currentTorsoColor не задан или не в списке, выбираем первый цвет
-    if (!currentTorsoColor || !colors.includes(currentTorsoColor)) {
-        currentTorsoColor = colors[0];
+    if (!window[currentColor] || !colors.includes(window[currentColor])) {
+        window[currentColor] = colors[0];
         container.querySelector('.torso-color-btn').classList.add('active');
     }
+}
+
+// Функции для каждой части тела
+function updateTorsoColorControls() {
+    updateColorControls('torso', torsoColors, 'currentTorsoColor');
+}
+
+function updateHeadColorControls() {
+    updateColorControls('head', headColors, 'currentHeadColor');
+}
+
+function updateFaceColorControls() {
+    updateColorControls('face', faceColors, 'currentFaceColor');
+}
+
+function updateNeckColorControls() {
+    updateColorControls('neck', neckColors, 'currentNeckColor');
+}
+
+function updateArmsColorControls() {
+    updateColorControls('arms', armsColors, 'currentArmsColor');
+}
+
+function updateHandsColorControls() {
+    updateColorControls('hands', handsColors, 'currentHandsColor');
+}
+
+function updateShouldersColorControls() {
+    updateColorControls('shoulders', shouldersColors, 'currentShouldersColor');
+}
+
+function updateWaistColorControls() {
+    updateColorControls('waist', waistColors, 'currentWaistColor');
+}
+
+function updateLegsColorControls() {
+    updateColorControls('legs', legsColors, 'currentLegsColor');
+}
+
+function updateFeetColorControls() {
+    updateColorControls('feet', feetColors, 'currentFeetColor');
+}
+
+function updatePropsColorControls() {
+    updateColorControls('props', propsColors, 'currentPropsColor');
 }
