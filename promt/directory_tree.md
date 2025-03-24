@@ -6138,7 +6138,7 @@
                 - walk.png
         - Face/
           - Human_female/
-            - Formal Glasses/
+            - FormalGlasses/
               - _master.png
               - hurt.png
               - idle.png
@@ -6164,7 +6164,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Nerd Glasses/
+            - NerdGlasses/
               - hurt.png
               - idle.png
               - magic.png
@@ -6172,7 +6172,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Secretary Glasses/
+            - SecretaryGlasses/
               - hurt.png
               - idle.png
               - magic.png
@@ -6189,7 +6189,7 @@
               - thrust.png
               - walk.png
           - Human_male/
-            - Formal Glasses/
+            - FormalGlasses/
               - _master.png
               - hurt.png
               - idle.png
@@ -6216,10 +6216,10 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Nerd Glasses/
+            - NerdGlasses/
               - idle.png
               - walk.png
-            - Secretary Glasses/
+            - SecretaryGlasses/
               - idle.png
               - walk.png
             - Sunglasses/
@@ -6227,7 +6227,7 @@
               - walk.png
         - Feet/
           - Human_female/
-            - Armored Boots/
+            - ArmoredBoots/
               - Gold/
                 - _master.png
                 - hurt.png
@@ -6253,7 +6253,7 @@
               - magic.png
               - swing.png
               - walk.png
-            - Long Boots/
+            - LongBoots/
               - _master.png
               - hurt.png
               - idle.png
@@ -6288,7 +6288,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -6442,7 +6442,7 @@
               - thrust.png
               - walk.png
           - Human_male/
-            - Armored Boots/
+            - ArmoredBoots/
               - Gold/
                 - _master.png
                 - hurt.png
@@ -6512,7 +6512,7 @@
                 - walk.png
         - Head/
           - Human_female/
-            - Chain Hood/
+            - ChainHood/
               - hurt.png
               - idle.png
               - magic.png
@@ -6520,7 +6520,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Feather Cap/
+            - FeatherCap/
               - _master.png
               - hurt.png
               - idle.png
@@ -6529,7 +6529,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Full Helm/
+            - FullHelm/
               - _master.png
               - hurt.png
               - idle.png
@@ -6538,7 +6538,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Kettle Helmet/
+            - KettleHelmet/
               - _master.png
               - hurt.png
               - idle.png
@@ -6547,7 +6547,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Kettle Hood/
+            - KettleHood/
               - hurt.png
               - idle.png
               - magic.png
@@ -6555,7 +6555,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Leather Hood/
+            - LeatherHood/
               - hurt.png
               - idle.png
               - magic.png
@@ -6563,7 +6563,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Legion Helm 1/
+            - LegionHelm1/
               - Steel/
                 - hurt.png
                 - idle.png
@@ -6572,13 +6572,13 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Magician Hat/
+            - MagicianHat/
               - idle.png
               - magic.png
               - swing.png
               - thrust.png
               - walk.png
-            - Spiked Helm/
+            - SpikedHelm/
               - _master.png
               - idle.png
               - magic.png
@@ -6605,7 +6605,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Chain Hood/
+            - ChainHood/
               - _master.png
               - hurt.png
               - idle.png
@@ -6614,7 +6614,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Feather Cap/
+            - FeatherCap/
               - _master.png
               - hurt.png
               - idle.png
@@ -6623,7 +6623,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Full Helm/
+            - FullHelm/
               - _master.png
               - hurt.png
               - idle.png
@@ -6632,7 +6632,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Kettle Helmet/
+            - KettleHelmet/
               - _master.png
               - hurt.png
               - idle.png
@@ -6641,7 +6641,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Kettle Hood/
+            - KettleHood/
               - _master.png
               - hurt.png
               - idle.png
@@ -6650,7 +6650,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Leather Hood/
+            - LeatherHood/
               - _master.png
               - hurt.png
               - idle.png
@@ -6659,7 +6659,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Spiked Helm/
+            - SpikedHelm/
               - _master.png
               - idle.png
               - magic.png
@@ -6667,7 +6667,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Top Hat/
+            - TopHat/
               - _master.png
               - hurt.png
               - idle.png
@@ -6678,7 +6678,7 @@
               - walk.png
         - Legs/
           - Human_female/
-            - Belle Skirt/
+            - BelleSkirt/
               - Black/
                 - hurt.png
                 - idle.png
@@ -6695,7 +6695,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -6858,7 +6858,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Legion Skirt/
+            - LegionSkirt/
               - hurt.png
               - idle.png
               - magic.png
@@ -6884,7 +6884,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7028,8 +7028,8 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Short Shorts/
-              - Blue Gray/
+            - ShortShorts/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7037,7 +7037,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Slit Skirt/
+            - SlitSkirt/
               - Black/
                 - hurt.png
                 - idle.png
@@ -7054,7 +7054,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7198,7 +7198,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Straight Skirt/
+            - StraightSkirt/
               - Maroon/
                 - death.png
                 - idle.png
@@ -7208,7 +7208,7 @@
                 - thrust.png
                 - walk.png
           - Human_male/
-            - Baggy Pants/
+            - BaggyPants/
               - _master.png
               - hurt.png
               - idle.png
@@ -7236,7 +7236,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Robe Skirt/
+            - RobeSkirt/
               - _master.png
               - hurt.png
               - idle.png
@@ -7255,9 +7255,9 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Slacks with Stripes/
-              - formal_pants stripes.png
-            - Tight Pants/
+            - SlacksWithStripes/
+              - formal_pants_tripes.png
+            - TightPants/
               - _master.png
               - Black/
                 - hurt.png
@@ -7276,9 +7276,9 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-        - Legs 2/
+        - Legs2/
           - Human_female/
-            - Half Apron/
+            - HalfApron/
               - White/
                 - idle.png
                 - walk.png
@@ -7354,7 +7354,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Single Shoulder/
+            - SingleShoulder/
               - hurt.png
               - idle.png
               - magic.png
@@ -7381,7 +7381,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7525,7 +7525,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Chainmail Shirt/
+            - ChainmailShirt/
               - _master.png
               - hurt.png
               - idle.png
@@ -7534,7 +7534,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Irish Dress/
+            - IrishDress/
               - Black/
                 - hurt.png
                 - idle.png
@@ -7551,7 +7551,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7695,7 +7695,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Long-Sleeve Blouse/
+            - LongSleeveBlouse/
               - Black/
                 - hurt.png
                 - idle.png
@@ -7712,7 +7712,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -7856,7 +7856,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Long-Sleeve Shirt/
+            - LongSleeveShirt/
               - Black/
                 - hurt.png
                 - idle.png
@@ -7873,7 +7873,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8017,7 +8017,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Pirate Shirt/
+            - PirateShirt/
               - Black/
                 - hurt.png
                 - idle.png
@@ -8034,7 +8034,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8178,7 +8178,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Scoop Neck/
+            - ScoopNeck/
               - Black/
                 - hurt.png
                 - idle.png
@@ -8195,7 +8195,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8339,7 +8339,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Sleeveless Shirt/
+            - SleevelessShirt/
               - Black/
                 - hurt.png
                 - idle.png
@@ -8356,7 +8356,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8500,7 +8500,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Slit Dress/
+            - SlitDress/
               - Black/
                 - hurt.png
                 - idle.png
@@ -8517,7 +8517,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8662,7 +8662,7 @@
                 - thrust.png
                 - walk.png
           - Human_male/
-            - Chainmail Shirt/
+            - ChainmailShirt/
               - _master.png
               - hurt.png
               - idle.png
@@ -8671,7 +8671,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Dress Shirt/
+            - DressShirt/
               - _master.png
               - hurt.png
               - idle.png
@@ -8680,7 +8680,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Dress Shirt with Stripes/
+            - DressShirtWithStripes/
               - _master.png
               - hurt.png
               - idle.png
@@ -8689,7 +8689,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Long-Sleeve Shirt/
+            - LongSleeveShirt/
               - _master.png
               - Black/
                 - hurt.png
@@ -8707,7 +8707,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -8851,16 +8851,15 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Sleeveless Shirt/
-              - Navy/
-                - hurt.png
-                - idle.png
-                - magic.png
-                - shoot.png
-                - swing.png
-                - thrust.png
-                - walk.png
-        - Torso 2/
+            - SleevelessShirt/
+              - hurt.png
+              - idle.png
+              - magic.png
+              - shoot.png
+              - swing.png
+              - thrust.png
+              - walk.png
+        - Torso2/
           - Human_female/
             - Apron/
               - idle.png
@@ -8909,7 +8908,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -9053,7 +9052,7 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Leather Chestpiece/
+            - LeatherChestpiece/
               - _master.png
               - hurt.png
               - idle.png
@@ -9062,7 +9061,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Legion Plate/
+            - LegionPlate/
               - Steel/
                 - hurt.png
                 - idle.png
@@ -9134,7 +9133,16 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Leather Chestpiece/
+            - Iverness/
+              - Black/
+                - hurt.png
+                - idle.png
+                - magic.png
+                - shoot.png
+                - swing.png
+                - thrust.png
+                - walk.png
+            - LeatherChestpiece/
               - _master.png
               - hurt.png
               - idle.png
@@ -9151,6 +9159,16 @@
               - swing.png
               - thrust.png
               - walk.png
+            - Trenchcoat/
+              - _master.png
+              - Black/
+                - hurt.png
+                - idle.png
+                - magic.png
+                - shoot.png
+                - swing.png
+                - thrust.png
+                - walk.png
             - Vest/
               - _master.png
               - Green/
@@ -9161,11 +9179,9 @@
                 - swing.png
                 - thrust.png
                 - walk.png
-            - Vest with Stripes/
-              - formal_vest stripes.png
-        - Torso 3/
+        - Torso3/
           - Human_female/
-            - Cloak with Clip/
+            - CloakWithClip/
               - Black/
                 - Back/
                   - hurt.png
@@ -9200,7 +9216,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-              - Blue Gray/
+              - BlueGray/
                 - Back/
                   - hurt.png
                   - idle.png
@@ -9506,7 +9522,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-            - Cloak with Tie/
+            - CloakWithTie/
               - White/
                 - Back/
                   - hurt.png
@@ -9524,7 +9540,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-            - Tattered Cloak with Clip/
+            - Tattered CloakwithClip/
               - White/
                 - Back/
                   - hurt.png
@@ -9542,7 +9558,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-            - Tattered Cloak with Tie/
+            - TatteredCloakWithTie/
               - White/
                 - Back/
                   - hurt.png
@@ -9560,7 +9576,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-            - Trimmed Cloak with Clip/
+            - TrimmedCloakWithClip/
               - White/
                 - Back/
                   - hurt.png
@@ -9578,7 +9594,7 @@
                   - swing.png
                   - thrust.png
                   - walk.png
-            - Trimmed Cloak with Tie/
+            - TrimmedCloakWithTie/
               - White/
                 - Back/
                   - hurt.png
@@ -9597,30 +9613,8 @@
                   - thrust.png
                   - walk.png
           - Human_male/
-            - Formal Jacket/
-              - Walnut/
-                - hurt.png
-                - idle.png
-                - magic.png
-                - shoot.png
-                - swing.png
-                - thrust.png
-                - walk.png
-            - Formal Jacket with Stripes/
-              - _master.png
-            - Iverness/
-              - _master.png
-              - Black/
-                - hurt.png
-                - idle.png
-                - magic.png
-                - shoot.png
-                - swing.png
-                - thrust.png
-                - walk.png
-            - Trenchcoat/
-              - _master.png
-              - Black/
+            - FormalJacket/
+              - Front/
                 - hurt.png
                 - idle.png
                 - magic.png
@@ -9630,7 +9624,7 @@
                 - walk.png
         - Waist/
           - Human_female/
-            - Cloth Belt/
+            - ClothBelt/
               - _master.png
               - hurt.png
               - idle.png
@@ -9639,7 +9633,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Leather Belt/
+            - LeatherBelt/
               - _master.png
               - hurt.png
               - idle.png
@@ -9649,7 +9643,7 @@
               - thrust.png
               - walk.png
           - Human_male/
-            - Cloth Belt/
+            - ClothBelt/
               - _master.png
               - hurt.png
               - idle.png
@@ -9658,7 +9652,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Formal Belt/
+            - FormalBelt/
               - _master.png
               - hurt.png
               - idle.png
@@ -9667,7 +9661,7 @@
               - swing.png
               - thrust.png
               - walk.png
-            - Leather Belt/
+            - LeatherBelt/
               - _master.png
               - hurt.png
               - idle.png
@@ -9682,15 +9676,15 @@
             - greatbow.png
             - recurve.png
             - short bow.png
-          - Shoot, Ammunition/
+          - ShootAmmunition/
             - arrow.png
           - Swing/
             - Dagger/
               - swing.png
-            - Glowsword, Blue/
-              - glowsword, blue.png
-            - Glowsword, Red/
-              - glowsword, red.png
+            - GlowswordBlue/
+              - GlowswordBlue.png
+            - GlowswordRed/
+              - GlowswordRed.png
             - Greatsword/
               - greatsword.png
             - Mace/
@@ -9699,12 +9693,12 @@
               - rapier.png
             - Sabre/
               - sabre.png
-            - Short Sword/
-              - short sword.png
-            - Wand, Steel/
-              - wand, steel.png
-            - Wand, Wood/
-              - wand, wood.png
+            - ShortSword/
+              - ShortSword.png
+            - WandSteel/
+              - WandSteel.png
+            - WandWood/
+              - WandWood.png
           - Thrust/
             - cane.png
             - dragonspear.png
@@ -9713,18 +9707,18 @@
             - trident.png
         - Human_male/
           - Shoot/
+            - ShortBow.png
             - greatbow.png
             - recurve.png
-            - short bow.png
-          - Shoot, Ammunition/
+          - ShootAmmunition/
             - arrow.png
           - Swing/
             - Dagger/
               - dagger.png
-            - Glowsword, Blue/
-              - glowsword, blue.png
-            - Glowsword, Red/
-              - glowsword, red.png
+            - GlowswordBlue/
+              - GlowswordBlue.png
+            - GlowswordRed/
+              - GlowswordRed.png
             - Greatsword/
               - greatsword.png
             - Mace/
@@ -9733,12 +9727,12 @@
               - rapier.png
             - Sabre/
               - sabre.png
-            - Short Sword/
-              - short sword.png
-            - Wand, Steel/
-              - wand, steel.png
-            - Wand, Wood/
-              - wand, wood.png
+            - ShortSword/
+              - ShortSword.png
+            - WandSteel/
+              - WandSteel.png
+            - WandWood/
+              - WandWood.png
           - Thrust/
             - cane.png
             - dragonspear.png

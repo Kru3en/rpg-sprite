@@ -1,33 +1,40 @@
 function getTorsoPath(gender, torso, hairColor, animation) {
-    let torsoPath = '';
+    let torsoPath = `${basePath}Clothes/Torso`;
     let torsoSubfolder = '';
 
-    if (['Blouse', 'Chainmail Shirt', 'Irish Dress', 'Long-Sleeve Blouse', 'Long-Sleeve Shirt', 'Pirate Shirt', 'Scoop Neck', 'Sleeveless Shirt', 'Slit Dress'].includes(torso)) {
-        torsoPath = `${basePath}Clothes/Torso/${gender}/${torso}`;
-    } else if (['Apron', 'Bodice', 'Breastplate', 'Corset', 'Leather Chestpiece', 'Legion Plate', 'Robe', 'Sweater', 'Tabard', 'Tunic'].includes(torso)) {
-        torsoPath = `${basePath}Clothes/Torso 2/${gender}/${torso}`;
-    } else if (['Cloak with Clip', 'Cloak with Tie', 'Tattered Cloak with Clip', 'Tattered Cloak with Tie', 'Trimmed Cloak with Clip', 'Trimmed Cloak with Tie'].includes(torso)) {
-        torsoPath = `${basePath}Clothes/Torso 3/${gender}/${torso}`;
-        torsoSubfolder = '/Front';
-    } else if (['Formal Jacket', 'Formal Jacket with Stripes', 'Iverness', 'Trenchcoat', 'Vest', 'Vest with Stripes'].includes(torso)) {
-        torsoPath = `${basePath}Clothes/Torso 2/${gender}/${torso}`;
+    // Определяем подкаталог в зависимости от типа торса
+    if (['Blouse', 'ChainmailShirt', 'IrishDress', 'LongSleeveBlouse', 'LongSleeveShirt', 
+         'PirateShirt', 'ScoopNeck', 'SleevelessShirt', 'SlitDress'].includes(torso)) {
+        torsoPath += `/${gender}/${torso}`;
+    } else if (['Apron', 'Bodice', 'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 
+                'Robe', 'Sweater', 'Tabard', 'Tunic', 'Iverness', 'Trenchcoat', 'Vest'].includes(torso)) {
+        torsoPath += `2/${gender}/${torso}`;
+    } else if (['CloakWithClip', 'FormalJacket', 'CloakWithTie', 'TatteredCloakWithClip', 
+                'TatteredCloakWithTie', 'TrimmedCloakWithClip', 'TrimmedCloakWithTie'].includes(torso)) {
+        torsoPath += `3/${gender}/${torso}`;
+        torsoSubfolder = '/Front'; // Для плащей используется подкаталог Front
+    } else {
+        torsoPath += `/${gender}/${torso}`; // На случай новых типов торса
     }
 
+    // Добавляем цвет, если он доступен
     if (torsoColors[torso] && torsoColors[torso].includes(hairColor)) {
         torsoPath += `/${hairColor}`;
     } else if (torso === 'Breastplate') {
-        torsoPath += '/Gold';
-    } else if (torso === 'Legion Plate') {
+        torsoPath += '/Gold'; // По умолчанию Gold
+    } else if (torso === 'LegionPlate') {
         torsoPath += '/Steel';
     } else if (torso === 'Robe') {
-        torsoPath += '/Forest';
+        torsoPath += '/Forest'; // По умолчанию Forest
     } else if (torso === 'Vest') {
         torsoPath += '/Green';
-    } else if (torso === 'Formal Jacket') {
-        torsoPath += '/Walnut';
-    } else if (torso === 'Iverness' || torso === 'Trenchcoat') {
+    }  else if (torso === 'Iverness' || torso === 'Trenchcoat') {
         torsoPath += '/Black';
+    } else if (['CloakWithTie', 'TatteredCloakWithClip', 'TatteredCloakWithTie', 
+                'TrimmedCloakWithClip', 'TrimmedCloakWithTie'].includes(torso)) {
+        torsoPath += '/White';
     }
 
+    // Формируем полный путь к файлу анимации
     return `${torsoPath}${torsoSubfolder}/${animation}.png`;
 }
