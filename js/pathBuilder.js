@@ -3,76 +3,45 @@ function buildPath(part, gender, item, animation, currentColor, colors, defaultC
     let path = `${basePath}Clothes/${part}/${gender}/${item}`;
     let subfolder = '';
 
-    // Проверяем, есть ли специальные папки (например, Front/Back для Cloak)
     if (['CloakWithClip', 'CloakWithTie', 'TatteredCloakwithClip', 'TatteredCloakWithTie', 
          'TrimmedCloakWithClip', 'TrimmedCloakWithTie', 'FormalJacket'].includes(item) && part === 'Torso3') {
         subfolder = '/Front';
     }
 
-    // Проверяем доступные цвета
-    if (currentColor && colors[gender][item]?.length > 0 && colors[gender][item].includes(currentColor)) {
-        path += `/${currentColor}`;
-    } else if (colors[gender][item]?.length === 0) {
+    const availableColors = colors[gender][item] || [];
+    const colorToUse = window[currentColor]; // Используем глобальную переменную напрямую
+
+    if (colorToUse && availableColors.length > 0 && availableColors.includes(colorToUse)) {
+        path += `/${colorToUse}`;
+    } else if (availableColors.length === 0) {
         // Нет подкаталога цвета
     } else if (defaultColors[item]) {
         path += `/${defaultColors[item]}`;
-        window[currentColor] = defaultColors[item];
-    } else if (colors[gender][item]?.length > 0) {
-        window[currentColor] = colors[gender][item][0];
-        path += `/${colors[gender][item][0]}`;
+        window[currentColor] = defaultColors[item]; // Обновляем глобальную переменную
+    } else if (availableColors.length > 0) {
+        window[currentColor] = availableColors[0];
+        path += `/${availableColors[0]}`;
     }
 
     return `${path}${subfolder}/${animation}.png`;
 }
 
 function getTorsoPath(gender, torso, animation) {
-    let torsoPath = `${basePath}Clothes/Torso`;
-    if (['Blouse', 'ChainmailShirt', 'IrishDress', 'LongSleeveBlouse', 'LongSleeveShirt', 
-         'PirateShirt', 'ScoopNeck', 'SleevelessShirt', 'SlitDress'].includes(torso)) {
-        torsoPath += `/${gender}/${torso}`;
-    } else if (['Apron', 'Bodice', 'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 
-                'Robe', 'Sweater', 'Tabard', 'Tunic', 'Iverness', 'Trenchcoat', 'Vest'].includes(torso)) {
-        torsoPath += `2/${gender}/${torso}`;
+    const defaultColors = {
+        'Breastplate': 'Gold', 'LegionPlate': 'Steel', 'Robe': 'Forest', 'Vest': 'Green',
+        'Iverness': 'Black', 'Trenchcoat': 'Black', 'CloakWithTie': 'White',
+        'TatteredCloakwithClip': 'White', 'TatteredCloakWithTie': 'White',
+        'TrimmedCloakWithClip': 'White', 'TrimmedCloakWithTie': 'White'
+    };
+    let part = 'Torso';
+    if (['Apron', 'Bodice', 'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 
+         'Robe', 'Sweater', 'Tabard', 'Tunic', 'Iverness', 'Trenchcoat', 'Vest'].includes(torso)) {
+        part = 'Torso2';
     } else if (['CloakWithClip', 'CloakWithTie', 'TatteredCloakwithClip', 'TatteredCloakWithTie', 
                 'TrimmedCloakWithClip', 'TrimmedCloakWithTie', 'FormalJacket'].includes(torso)) {
-        torsoPath += `3/${gender}/${torso}`;
-    } else {
-        torsoPath += `/${gender}/${torso}`;
+        part = 'Torso3';
     }
-
-    const defaultColors = {
-        'Breastplate': 'Gold',
-        'LegionPlate': 'Steel',
-        'Robe': 'Forest',
-        'Vest': 'Green',
-        'Iverness': 'Black',
-        'Trenchcoat': 'Black',
-        'CloakWithTie': 'White',
-        'TatteredCloakwithClip': 'White',
-        'TatteredCloakWithTie': 'White',
-        'TrimmedCloakWithClip': 'White',
-        'TrimmedCloakWithTie': 'White'
-    };
-
-    let subfolder = '';
-    if (['CloakWithClip', 'CloakWithTie', 'TatteredCloakwithClip', 'TatteredCloakWithTie', 
-         'TrimmedCloakWithClip', 'TrimmedCloakWithTie', 'FormalJacket'].includes(torso)) {
-        subfolder = '/Front';
-    }
-
-    if (currentTorsoColor && torsoColors[gender][torso]?.length > 0 && torsoColors[gender][torso].includes(currentTorsoColor)) {
-        torsoPath += `/${currentTorsoColor}`;
-    } else if (torsoColors[gender][torso]?.length === 0 && currentTorsoColor) {
-        // Нет подкаталога цвета
-    } else if (defaultColors[torso]) {
-        torsoPath += `/${defaultColors[torso]}`;
-        currentTorsoColor = defaultColors[torso];
-    } else if (torsoColors[gender][torso]?.length > 0) {
-        currentTorsoColor = torsoColors[gender][torso][0];
-        torsoPath += `/${torsoColors[gender][torso][0]}`;
-    }
-
-    return `${torsoPath}${subfolder}/${animation}.png`;
+    return buildPath(part, gender, torso, animation, 'currentTorsoColor', torsoColors, defaultColors);
 }
 
 function getHeadPath(gender, head, animation) {
