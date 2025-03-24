@@ -23,7 +23,7 @@ function updatePreview() {
         { src: `${basePath}Body/Base/${gender}/${skin}/${animation}.png`, class: 'body' },
         { src: `${basePath}Body/Hair/${gender}/${hairStyle}/${hairColor}${hairStyle === 'Extra Long' ? '/Front' : ''}/${animation}.png`, class: 'hair' },
         { src: `${basePath}Body/Eyes/${gender}/${eyes}/${animation}.png`, class: 'eyes' },
-        { src: getTorsoPath(gender, torso, hairColor, animation), class: 'torso' }
+        { src: getTorsoPath(gender, torso, animation), class: 'torso' } // Убрали hairColor
     ];
 
     directions.forEach(direction => {

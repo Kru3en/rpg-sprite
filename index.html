@@ -26,7 +26,49 @@
         <select id="eyes"></select>
 
         <h3>Torso</h3>
-        <select id="torso"></select>
+        <select id="torso" onchange="updateTorsoColorControls(); updatePreview()"></select>
+        <div id="torso-color-controls"></div> <!-- Добавляем контейнер для кнопок -->
+
+        <h3>Head</h3>
+    <select id="head" onchange="updateHeadColorControls(); updatePreview()"></select>
+    <div id="head-color-controls"></div>
+
+    <h3>Face</h3>
+    <select id="face" onchange="updateFaceColorControls(); updatePreview()"></select>
+    <div id="face-color-controls"></div>
+
+    <h3>Neck</h3>
+    <select id="neck" onchange="updateNeckColorControls(); updatePreview()"></select>
+    <div id="neck-color-controls"></div>
+
+    <h3>Arms</h3>
+    <select id="arms" onchange="updateArmsColorControls(); updatePreview()"></select>
+    <div id="arms-color-controls"></div>
+
+    <h3>Hands</h3>
+    <select id="hands" onchange="updateHandsColorControls(); updatePreview()"></select>
+    <div id="hands-color-controls"></div>
+
+    <h3>Shoulders</h3>
+    <select id="shoulders" onchange="updateShouldersColorControls(); updatePreview()"></select>
+    <div id="shoulders-color-controls"></div>
+
+    <h3>Waist</h3>
+    <select id="waist" onchange="updateWaistColorControls(); updatePreview()"></select>
+    <div id="waist-color-controls"></div>
+
+    <h3>Legs</h3>
+    <select id="legs" onchange="updateLegsColorControls(); updatePreview()"></select>
+    <div id="legs-color-controls"></div>
+
+    <h3>Feet</h3>
+    <select id="feet" onchange="updateFeetColorControls(); updatePreview()"></select>
+    <div id="feet-color-controls"></div>
+
+    <h3>Props</h3>
+    <select id="props" onchange="updatePropsColorControls(); updatePreview()"></select>
+    <div id="props-color-controls"></div>
+    
     </div>
 
     <div id="preview-container">

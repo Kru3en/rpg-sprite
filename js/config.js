@@ -20,20 +20,19 @@ const frameHeight = 64;
 const animationSpeed = 300;
 
 const animations = {
-    'Human_female': ['idle', 'walk', 'hurt', 'magic', 'shoot', 'swing', 'thrust'],
-    'Human_male': ['idle', 'walk', 'hurt', 'magic', 'shoot', 'swing', 'thrust']
+    'Human_female': ['hurt', 'idle', 'magic', 'shoot', 'swing', 'thrust', 'walk'],
+    'Human_male': ['hurt', 'idle', 'magic', 'shoot', 'swing', 'thrust', 'walk']
 };
 
 const hairStyles = {
     'Human_female': [
-        'Afro', 'Bangs', 'BangsLong', 'BangsLong2', 'BangsShort', 'Bedhead', 'Braid', 
-        'Bunches', 'Curly', 'ExtraLong', 'ExtraLongKnot', 'Long', 'LongHawk', 'LongKnot', 
-        'Loose', 'Messy', 'Messy2', 'Mohawk', 'Page', 'Parted'
+        'Afro', 'Bangs', 'Bangs Long', 'Bangs Long 2', 'Bangs Short', 'Bedhead', 'Braid', 
+        'Bunches', 'Curly', 'Extra Long', 'Extra Long Knot', 'Long', 'Long Hawk', 'Long Knot', 
+        'Loose', 'Messy', 'Messy 2', 'Mohawk', 'Page', 'Parted'
     ],
     'Human_male': [
-        'Afro', 'Bangs', 'BangsLong', 'BangsShort', 'Bedhead', 'Braid', 'Bun', 'Buzzcut', 
-        'ExtraLong', 'Long', 'LongHawk', 'Loose', 'Messy', 'Mohawk', 'Page', 'Parted', 
-        'Ponytail', 'Short', 'Shortknot', 'SideRazor', 'SideRazorLong', 'WidowsPeak'
+        'Afro', 'Bangs', 'Bangs Long', 'Bangs Short', 'Bedhead', 'Braid', 'Bunches', 'Curly', 
+        'Extra Long', 'Long', 'Long Hawk', 'Loose', 'Messy', 'Mohawk', 'Page', 'Parted'
     ]
 };
 
@@ -42,72 +41,87 @@ const hairColors = [
     'Pink', 'Platinum', 'Red', 'Teal', 'White', 'Yellow'
 ];
 
-const eyeColors = ['Blue', 'Brown', 'FullBlack', 'Gray', 'Green', 'Orange', 'Purple', 'Red', 'Yellow'];
+const eyeColors = ['Blue', 'Brown', 'Gray', 'Green', 'Orange', 'Purple', 'Red', 'Yellow'];
 
 const torsoOptions = {
     'Human_female': [
         'Blouse', 'ChainmailShirt', 'IrishDress', 'LongSleeveBlouse', 'LongSleeveShirt', 
         'PirateShirt', 'ScoopNeck', 'SleevelessShirt', 'SlitDress', 'Apron', 'Bodice', 
         'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 'Robe', 'Sweater', 
-        'Tabard', 'Tunic', 'CloakWithClip', 'CloakWithTie', 'TatteredCloakWithClip', 
+        'Tabard', 'Tunic', 'CloakWithClip', 'CloakWithTie', 'Tattered CloakwithClip', 
         'TatteredCloakWithTie', 'TrimmedCloakWithClip', 'TrimmedCloakWithTie'
     ],
     'Human_male': [
         'ChainmailShirt', 'DressShirt', 'DressShirtWithStripes', 'LongSleeveShirt', 
-        'SleevelessShirt', 'Breastplate', 'LeatherChestpiece', 'Tabard', 'Vest', 
-        'FormalJacket', 'Iverness', 
-        'Trenchcoat', 'Sweater'
+        'SleevelessShirt', 'Breastplate', 'Iverness', 'LeatherChestpiece', 'Tabard', 
+        'Trenchcoat', 'Vest', 'FormalJacket'
     ]
 };
 
 const torsoColors = {
-    'Blouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'IrishDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'LongSleeveBlouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
-        'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
-        'Walnut', 'White', 'Yellow'],
-    'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
-        'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
-        'Walnut', 'White', 'Yellow'],
-    'PirateShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'ScoopNeck': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'SlitDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'Corset': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
-        'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
-        'White', 'Yellow'],
-    'CloakWithClip': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
-        'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
-        'Walnut', 'White', 'Yellow'],
-    'CloakWithTie': ['White'],
-    'TatteredCloakWithClip': ['White'],
-    'TatteredCloakWithTie': ['White'],
-    'TrimmedCloakWithClip': ['White'],
-    'TrimmedCloakWithTie': ['White'],
-    'Breastplate': ['Gold', 'Silver'],
-    'LegionPlate': ['Steel'],
-    'Robe': ['Forest', 'Green', 'Yellow'],
-    'Vest': ['Green'],
-    'FormalJacket': [],
-    'Iverness': ['Black'],
-    'Trenchcoat': ['Black'],
-    'ChainmailShirt': [],
-    'DressShirt': [],
-    'DressShirtWithStripes': [],
-    'LeatherChestpiece': [],
-    'Tabard': [],
-    'Tunic': [],
-    'Apron': [],
-    'Bodice': [],
-    'Sweater': [],
-
+    'Human_female': {
+        'Blouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'ChainmailShirt': [],
+        'IrishDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'LongSleeveBlouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'PirateShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'ScoopNeck': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'SleevelessShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'SlitDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'Apron': [],
+        'Bodice': [],
+        'Breastplate': ['Gold', 'Silver'],
+        'Corset': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'LeatherChestpiece': [],
+        'LegionPlate': ['Steel'],
+        'Robe': ['Forest', 'Green', 'Yellow'],
+        'Sweater': [],
+        'Tabard': [],
+        'Tunic': [],
+        'CloakWithClip': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'CloakWithTie': ['White'],
+        'TatteredCloakwithClip': ['White'],
+        'TatteredCloakWithTie': ['White'],
+        'TrimmedCloakWithClip': ['White'],
+        'TrimmedCloakWithTie': ['White']
+    },
+    'Human_male': {
+        'ChainmailShirt': [],
+        'DressShirt': [],
+        'DressShirtWithStripes': [],
+        'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'SleevelessShirt': [], // Оставляем пустым для мужского персонажа
+        'Breastplate': ['Gold', 'Silver'],
+        'Iverness': ['Black'],
+        'LeatherChestpiece': [],
+        'Tabard': [],
+        'Trenchcoat': ['Black'],
+        'Vest': ['Green'],
+        'FormalJacket': []
+    }
 };
+
+let currentTorsoColor = null;

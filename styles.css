@@ -63,3 +63,24 @@ body {
     border: none;
     border-radius: 4px;
 }
+
+#torso-color-controls {
+    margin-top: 10px;
+}
+
+.torso-color-btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.torso-color-btn:hover {
+    background-color: #ddd;
+}
+
+.torso-color-btn.active {
+    background-color: #007bff;
+    color: white;
+}
