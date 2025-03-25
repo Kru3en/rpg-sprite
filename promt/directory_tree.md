@@ -4,26 +4,27 @@
 - ../assets/sprite/character/Weapons/
   - Human_female/
     - Shoot/
+      - ShortBow.png
       - greatbow.png
       - recurve.png
-      - short bow.png
     - ShootAmmunition/
       - arrow.png
     - Swing/
+      - Swing.lnk
       - Dagger/
-        - swing.png
+        - Dagger.png
       - GlowswordBlue/
         - GlowswordBlue.png
       - GlowswordRed/
         - GlowswordRed.png
       - Greatsword/
-        - greatsword.png
+        - Greatsword.png
       - Mace/
-        - mace.png
+        - Mace.png
       - Rapier/
-        - rapier.png
+        - Rapier.png
       - Sabre/
-        - sabre.png
+        - Sabre.png
       - ShortSword/
         - ShortSword.png
       - WandSteel/
@@ -31,10 +32,10 @@
       - WandWood/
         - WandWood.png
     - Thrust/
-      - cane.png
-      - dragonspear.png
-      - spear.png
-      - staff.png
+      - Cane.png
+      - Dragonspear.png
+      - Spear.png
+      - Staff.png
       - trident.png
   - Human_male/
     - Shoot/
