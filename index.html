@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Character Editor</title>
+    <title>Редактор Персонажей</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="controls">
-        <h3>Body</h3>
-        <select id="gender" onchange="updateAnimations()">
-            <option value="Human_female">Female</option>
-            <option value="Human_male">Male</option>
+        <h3>Тело</h3>
+        <select id="gender">
+            <option value="Human_female">Женщина</option>
+            <option value="Human_male">Мужчина</option>
         </select>
         <select id="skin">
-            <option value="Coffee">Coffee</option>
-            <option value="Copper">Copper</option>
-            <option value="Ivory">Ivory</option>
-            <option value="Sienna">Sienna</option>
+            <option value="Coffee">Кофе</option>
+            <option value="Copper">Медь</option>
+            <option value="Ivory">Слоновая кость</option>
+            <option value="Sienna">Сиенна</option>
         </select>
 
-        <h3>Hair</h3>
+        <h3>Волосы</h3>
         <select id="hairStyle"></select>
         <select id="hairColor"></select>
 
-        <h3>Eyes</h3>
+        <h3>Глаза</h3>
         <select id="eyes"></select>
 
-        <h3>Torso</h3>
-        <select id="torso" onchange="updateTorsoColorControls(); updatePreview()"></select>
-        <div id="torso-color-controls"></div> <!-- Добавляем контейнер для кнопок -->
+        <h3>Торс</h3>
+        <select id="torso"></select>
+        <div id="torso-color-controls"></div>
 
-        <h3>Head</h3>
-    <select id="head" onchange="updateHeadColorControls(); updatePreview()"></select>
-    <div id="head-color-controls"></div>
+        <h3>Голова</h3>
+        <select id="head"></select>
+        <div id="head-color-controls"></div>
 
-    <h3>Face</h3>
-    <select id="face" onchange="updateFaceColorControls(); updatePreview()"></select>
-    <div id="face-color-controls"></div>
+        <h3>Лицо</h3>
+        <select id="face"></select>
+        <div id="face-color-controls"></div>
 
-    <h3>Neck</h3>
-    <select id="neck" onchange="updateNeckColorControls(); updatePreview()"></select>
-    <div id="neck-color-controls"></div>
+        <h3>Шея</h3>
+        <select id="neck"></select>
+        <div id="neck-color-controls"></div>
 
-    <h3>Arms</h3>
-    <select id="arms" onchange="updateArmsColorControls(); updatePreview()"></select>
-    <div id="arms-color-controls"></div>
+        <h3>Руки</h3>
+        <select id="arms"></select>
+        <div id="arms-color-controls"></div>
 
-    <h3>Hands</h3>
-    <select id="hands" onchange="updateHandsColorControls(); updatePreview()"></select>
-    <div id="hands-color-controls"></div>
+        <h3>Кисти</h3>
+        <select id="hands"></select>
+        <div id="hands-color-controls"></div>
 
-    <h3>Shoulders</h3>
-    <select id="shoulders" onchange="updateShouldersColorControls(); updatePreview()"></select>
-    <div id="shoulders-color-controls"></div>
+        <h3>Плечи</h3>
+        <select id="shoulders"></select>
+        <div id="shoulders-color-controls"></div>
 
-    <h3>Waist</h3>
-    <select id="waist" onchange="updateWaistColorControls(); updatePreview()"></select>
-    <div id="waist-color-controls"></div>
+        <h3>Талия</h3>
+        <select id="waist"></select>
+        <div id="waist-color-controls"></div>
 
-    <h3>Legs</h3>
-    <select id="legs" onchange="updateLegsColorControls(); updatePreview()"></select>
-    <div id="legs-color-controls"></div>
+        <h3>Ноги</h3>
+        <select id="legs"></select>
+        <div id="legs-color-controls"></div>
 
-    <h3>Feet</h3>
-    <select id="feet" onchange="updateFeetColorControls(); updatePreview()"></select>
-    <div id="feet-color-controls"></div>
+        <h3>Ступни</h3>
+        <select id="feet"></select>
+        <div id="feet-color-controls"></div>
 
-    <h3>Props</h3>
-    <select id="props" onchange="updatePropsColorControls(); updatePreview()"></select>
-    <div id="props-color-controls"></div>
-    <h3>Weapons</h3>
-<select id="weapon" onchange="updatePreview()"></select>
+        <h3>Аксессуары</h3>
+        <select id="props"></select>
+        <div id="props-color-controls"></div>
+
+        <h3>Оружие</h3>
+        <select id="weapon"></select>
     </div>
 
     <div id="preview-container">
@@ -80,14 +81,28 @@
             <div class="direction" id="dir-west"></div>
         </div>
         <div id="animation-controls">
-            <select id="animation" onchange="updatePreview()"></select>
+            <select id="animation"></select>
         </div>
     </div>
 
-    <script src="./js/config.js"></script>
-    <script src="./js/domUtils.js"></script>
-    <script src="./js/pathBuilder.js"></script>
-    <script src="./js/animation.js"></script>
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/config/baseConfig.js"></script>
+    <script type="module" src="./js/config/hairConfig.js"></script>
+    <script type="module" src="./js/config/torsoConfig.js"></script>
+    <script type="module" src="./js/config/headConfig.js"></script>
+    <script type="module" src="./js/config/faceConfig.js"></script>
+    <script type="module" src="./js/config/neckConfig.js"></script>
+    <script type="module" src="./js/config/armsConfig.js"></script>
+    <script type="module" src="./js/config/handsConfig.js"></script>
+    <script type="module" src="./js/config/shouldersConfig.js"></script>
+    <script type="module" src="./js/config/waistConfig.js"></script>
+    <script type="module" src="./js/config/legsConfig.js"></script>
+    <script type="module" src="./js/config/feetConfig.js"></script>
+    <script type="module" src="./js/config/propsConfig.js"></script>
+    <script type="module" src="./js/config/weaponConfig.js"></script>
+    <script type="module" src="./js/characterModel.js"></script>
+    <script type="module" src="./js/pathBuilder.js"></script>
+    <script type="module" src="./js/renderer.js"></script>
+    <script type="module" src="./js/domController.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+export const torsoOptions = {
+    'Human_female': [
+        'Blouse', 'ChainmailShirt', 'IrishDress', 'LongSleeveBlouse', 'LongSleeveShirt', 
+        'PirateShirt', 'ScoopNeck', 'SleevelessShirt', 'SlitDress', 'Apron', 'Bodice', 
+        'Breastplate', 'Corset', 'LeatherChestpiece', 'LegionPlate', 'Robe', 'Sweater', 
+        'Tabard', 'Tunic', 'CloakWithClip', 'CloakWithTie', 'TatteredCloakwithClip', 
+        'TatteredCloakWithTie', 'TrimmedCloakWithClip', 'TrimmedCloakWithTie'
+    ],
+    'Human_male': [
+        'ChainmailShirt', 'DressShirt', 'DressShirtWithStripes', 'LongSleeveShirt', 
+        'SleevelessShirt', 'Breastplate', 'Iverness', 'LeatherChestpiece', 'Tabard', 
+        'Trenchcoat', 'Vest', 'FormalJacket'
+    ]
+};
+
+export const torsoColors = {
+    'Human_female': {
+        'Blouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'ChainmailShirt': [],
+        'IrishDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'LongSleeveBlouse': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'PirateShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'ScoopNeck': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'SleevelessShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'SlitDress': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'Apron': [],
+        'Bodice': [],
+        'Breastplate': ['Gold', 'Silver'],
+        'Corset': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 'Leather', 
+            'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 'Walnut', 
+            'White', 'Yellow'],
+        'LeatherChestpiece': [],
+        'LegionPlate': ['Steel'],
+        'Robe': ['Forest', 'Green', 'Yellow'],
+        'Sweater': [],
+        'Tabard': [],
+        'Tunic': [],
+        'CloakWithClip': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'CloakWithTie': ['White'],
+        'TatteredCloakwithClip': ['White'],
+        'TatteredCloakWithTie': ['White'],
+        'TrimmedCloakWithClip': ['White'],
+        'TrimmedCloakWithTie': ['White']
+    },
+    'Human_male': {
+        'ChainmailShirt': [],
+        'DressShirt': [],
+        'DressShirtWithStripes': [],
+        'LongSleeveShirt': ['Black', 'Blue', 'BlueGray', 'Forest', 'Gray', 'Green', 'Lavender', 
+            'Leather', 'Maroon', 'Navy', 'Orange', 'Pink', 'Purple', 'Red', 'Sky', 'Tan', 'Teal', 
+            'Walnut', 'White', 'Yellow'],
+        'SleevelessShirt': [],
+        'Breastplate': ['Gold', 'Silver'],
+        'Iverness': ['Black'],
+        'LeatherChestpiece': [],
+        'Tabard': [],
+        'Trenchcoat': ['Black'],
+        'Vest': ['Green'],
+        'FormalJacket': []
+    }
+};

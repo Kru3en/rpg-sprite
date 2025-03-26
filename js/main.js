@@ -1,19 +1,12 @@
+import { CharacterModel } from './characterModel.js';
+import { PathBuilder } from './pathBuilder.js';
+import { Renderer } from './renderer.js';
+import { DomController } from './domController.js';
+
 // Инициализация приложения
-populateSelect('hairColor', hairColors);
-populateSelect('eyes', eyeColors);
-updateAnimations();
+const characterModel = new CharacterModel();
+const pathBuilder = new PathBuilder();
+const renderer = new Renderer(pathBuilder);
+const domController = new DomController(characterModel, renderer);
 
-// Добавление обработчиков событий
-document.querySelectorAll('select').forEach(select => {
-    if (select.id === 'animation') {
-        select.addEventListener('change', () => {
-            updateWeaponOptions(); // Обновляем оружие при смене анимации
-            updatePreview();
-        });
-    } else if (select.id !== 'gender') {
-        select.addEventListener('change', updatePreview);
-    }
-});
-
-// Начальный рендеринг
-updatePreview();
+domController.initialize();
