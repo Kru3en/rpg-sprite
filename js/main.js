@@ -5,7 +5,12 @@ updateAnimations();
 
 // Добавление обработчиков событий
 document.querySelectorAll('select').forEach(select => {
-    if (select.id !== 'gender' && select.id !== 'animation') {
+    if (select.id === 'animation') {
+        select.addEventListener('change', () => {
+            updateWeaponOptions(); // Обновляем оружие при смене анимации
+            updatePreview();
+        });
+    } else if (select.id !== 'gender') {
         select.addEventListener('change', updatePreview);
     }
 });

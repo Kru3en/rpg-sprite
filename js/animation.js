@@ -2,9 +2,7 @@ let currentFrame = 0;
 let animationInterval = null;
 
 function updatePreview() {
-    if (animationInterval) {
-        clearInterval(animationInterval);
-    }
+    if (animationInterval) clearInterval(animationInterval);
 
     const gender = document.getElementById('gender').value;
     const skin = document.getElementById('skin').value;
@@ -22,12 +20,26 @@ function updatePreview() {
     const legs = document.getElementById('legs').value;
     const feet = document.getElementById('feet').value;
     const props = document.getElementById('props').value;
+    const weapon = document.getElementById('weapon').value;
     const animation = document.getElementById('animation').value;
 
     directions.forEach(direction => {
         const dirContainer = document.getElementById(`dir-${direction}`);
         dirContainer.innerHTML = '';
     });
+
+    const weaponInfo = getWeaponPath(gender, weapon, animation);
+    console.log('Weapon:', weapon, 'WeaponInfo:', weaponInfo);
+
+    let weaponFrameWidth = frameWidth;
+    let weaponFrameHeight = frameHeight;
+    let weaponCols = 8;
+    if (weaponInfo && weaponInfo.sizeInfo) {
+        weaponCols = weaponInfo.sizeInfo.cols;
+        weaponFrameWidth = weaponInfo.sizeInfo.width / weaponCols;
+        weaponFrameHeight = weaponInfo.sizeInfo.height / 4;
+        console.log('Weapon frame size:', weaponFrameWidth, 'x', weaponFrameHeight);
+    }
 
     const layers = [
         { src: `${basePath}Body/Base/${gender}/${skin}/${animation}.png`, class: 'body', condition: true },
@@ -43,7 +55,8 @@ function updatePreview() {
         { src: `${basePath}Body/Hair/${gender}/${hairStyle}/${hairColor}${hairStyle === 'Extra Long' ? '/Front' : ''}/${animation}.png`, class: 'hair', condition: true },
         { src: getHeadPath(gender, head, animation), class: 'head', condition: head !== 'None' },
         { src: getFacePath(gender, face, animation), class: 'face', condition: face !== 'None' },
-        { src: getPropsPath(gender, props, animation), class: 'props', condition: props !== 'None' }
+        { src: getPropsPath(gender, props, animation), class: 'props', condition: props !== 'None' },
+        { src: weaponInfo ? weaponInfo.path : null, class: 'weapon', condition: weapon !== 'None' && weaponInfo }
     ];
 
     directions.forEach(direction => {
@@ -54,35 +67,66 @@ function updatePreview() {
                 img.src = layer.src;
                 img.className = layer.class;
                 img.style.objectFit = 'none';
-                img.style.width = `${frameWidth}px`;
-                img.style.height = `${frameHeight}px`;
+                img.style.imageRendering = 'pixelated';
+                
+                if (layer.class === 'weapon') {
+                    img.style.width = `${weaponFrameWidth}px`;
+                    img.style.height = `${weaponFrameHeight}px`;
+                    // Центрируем оружие относительно 64x64 персонажа
+                    img.style.left = `${(64 - weaponFrameWidth) / 2}px`;
+                    img.style.top = `${(64 - weaponFrameHeight) / 2}px`;
+                    img.onerror = () => console.error(`Failed to load weapon image: ${layer.src}`);
+                    console.log(`Adding weapon image: ${layer.src}, size: ${weaponFrameWidth}x${weaponFrameHeight}`);
+                } else {
+                    img.style.width = `${frameWidth}px`;
+                    img.style.height = `${frameHeight}px`;
+                }
                 dirContainer.appendChild(img);
             }
         });
     });
 
     currentFrame = 0;
-    const totalFrames = frameCounts[animation] || 1;
+    const totalFrames = Math.min(weaponCols, frameCounts[animation] || 1);
 
     animationInterval = setInterval(() => {
         directions.forEach(direction => {
             const dirContainer = document.getElementById(`dir-${direction}`);
             const imgs = dirContainer.querySelectorAll('img');
             const yOffset = -(directionRows[direction] * frameHeight);
-
+            const weaponYOffset = -(directionRows[direction] * weaponFrameHeight);
+            const xOffset = -(currentFrame * frameWidth);
             if (animation === 'idle') {
-                const tiltFactor = Math.sin(currentFrame * 0.1) * 5;
-                const flipDirection = tiltFactor >= 0 ? 1 : -1;
                 imgs.forEach(img => {
-                    img.style.imageRendering = 'pixelated';
-                    img.style.transform = `rotate(${tiltFactor}deg) scaleX(${flipDirection})`;
-                    img.style.transformOrigin = 'center bottom';
-                    img.style.objectPosition = `0px ${yOffset}px`;
+                    if (img.className === 'body') {
+                        // Скин: переключаем между 2 кадрами
+                        const xOffset = -(currentFrame % 2) * frameWidth; // 0 или -64
+                        img.style.objectPosition = `${xOffset}px ${yOffset}px`;
+                        img.style.transform = 'none';
+                    } else if (img.className === 'weapon') {
+                        // Оружие: статичная позиция
+                        img.style.objectPosition = `0px ${weaponYOffset}px`;
+                        const shift = (currentFrame % 2 !== 0) ? -0.3 : 0.1; // -1px вверх, 1px вниз
+                        img.style.transform = `translateY(${shift}px)`;
+                        img.style.transformOrigin = 'center center';
+                
+                    } else {
+        
+                        img.style.objectPosition = `0px ${yOffset}px`;
+                        const shift = (currentFrame % 2 !== 0) ? -0.3 : 0.1; // -1px вверх, 1px вниз
+                        img.style.transform = `translateY(${shift}px)`;
+                        img.style.transformOrigin = 'center center';
+                    }
                 });
             } else {
-                const xOffset = -(currentFrame * frameWidth);
+                const weaponXOffset = -(currentFrame * weaponFrameWidth);
                 imgs.forEach(img => {
-                    img.style.objectPosition = `${xOffset}px ${yOffset}px`;
+                    if (img.className === 'weapon') {
+                        img.style.objectPosition = `${weaponXOffset}px ${weaponYOffset}px`;
+                        console.log(`Weapon offset (${direction}): ${weaponXOffset}px ${weaponYOffset}px`);
+                    } else {
+                        img.style.objectPosition = `${xOffset}px ${yOffset}px`;
+                    }
                     img.style.transform = 'rotate(0deg)';
                     img.style.transformOrigin = 'center center';
                 });

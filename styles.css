@@ -5,18 +5,24 @@ body {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    min-height: 100vh; /* Для корректного центрирования */
 }
+
 .controls {
     width: 300px;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Скролл для панели управления */
+    max-height: 90vh; /* Ограничение высоты панели */
 }
+
 .controls h3 {
     margin: 10px 0 5px;
     color: #333;
 }
+
 .controls select {
     width: 100%;
     padding: 8px;
@@ -25,39 +31,57 @@ body {
     border-radius: 4px;
     background: #fff;
 }
+
 #preview-container {
-    width: 400px;
-    text-align: center;
-}
-#preview {
+    flex: 1; /* Занимает оставшееся пространство */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh; /* Центрирование по вертикали */
+    position: sticky; /* Фиксация при скролле */
+    top: 0;
 }
+
+#preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Сетка 2x2 */
+    gap: 10px;
+}
+
 .direction {
     position: relative;
-    width: 64px;
-    height: 64px;
-    margin: 5px 0;
+    width: 128px; /* Должно быть больше максимального размера кадра (например, 128 для greatbow) */
+    height: 128px;
     background: #e0e0e0;
     border: 2px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
 }
+
 .direction img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 832px;
-    height: 1344px;
+    image-rendering: pixelated;
+}
+
+.weapon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 128px; /* Синхронизируем с размером кадра */
+    height: 128px;
+    z-index: 1000;
     object-fit: none;
 }
+
 #animation-controls {
-    margin-top: 10px;
+    margin-top: 20px;
+    text-align: center;
 }
+
 #animation-controls select {
     padding: 8px 16px;
-    margin: 0 5px;
     background: #4CAF50;
     color: white;
     border: none;

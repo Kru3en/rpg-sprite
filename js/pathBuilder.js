@@ -89,3 +89,42 @@ function getFeetPath(gender, feet, animation) {
 function getPropsPath(gender, props, animation) {
     return buildPath('Props', gender, props, animation, 'currentPropsColor', propsColors);
 }
+
+function getWeaponPath(gender, weapon, animation) {
+    if (weapon === 'None') return null;
+
+    let category = '';
+    if (animation === 'shoot') category = 'Shoot';
+    else if (animation === 'swing') category = 'Swing';
+    else if (animation === 'thrust') category = 'Thrust';
+    else if (animation === 'idle') {
+        if (weaponOptions[gender]['Shoot'].includes(weapon)) category = 'Shoot';
+        else if (weaponOptions[gender]['Swing'].includes(weapon)) category = 'Swing';
+        else if (weaponOptions[gender]['Thrust'].includes(weapon)) category = 'Thrust';
+        else return null;
+    } else return null;
+
+    const weaponLower = weapon.toLowerCase();
+    const matchingWeapon = Object.keys(weaponSpriteSizes).find(
+        key => key.toLowerCase() === weaponLower
+    );
+
+    if (!matchingWeapon) {
+        console.warn(`No sprite size info found for weapon: ${weapon}`);
+        return null;
+    }
+
+    const sizeInfo = weaponSpriteSizes[matchingWeapon];
+    let path = `${basePath}Weapons/${gender}/${category}/`;
+
+    // Для Swing добавляем подпапку с именем оружия
+    if (category === 'Swing') {
+        path += `${weapon}/${weapon}.png`;
+    } else {
+        // Для Shoot и Thrust файл лежит прямо в папке категории
+        path += `${weapon}.png`;
+    }
+
+    console.log(`Generated weapon path: ${path}`);
+    return { path, sizeInfo };
+}

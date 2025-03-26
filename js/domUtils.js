@@ -55,6 +55,7 @@ function updateAnimations() {
     updateLegsColorControls();
     updateFeetColorControls();
     updatePropsColorControls();
+    updateWeaponOptions();
     updatePreview();
 }
 
@@ -138,4 +139,29 @@ function updateFeetColorControls() {
 
 function updatePropsColorControls() {
     updateColorControls('props', propsColors, 'currentPropsColor');
+}
+
+function updateWeaponOptions() {
+    const gender = document.getElementById('gender').value;
+    const animation = document.getElementById('animation').value;
+    const weaponSelect = document.getElementById('weapon');
+    weaponSelect.innerHTML = '';
+
+    // Собираем все доступные оружия для пола
+    const allWeapons = [
+        ...new Set([
+            ...weaponOptions[gender]['Shoot'],
+            ...weaponOptions[gender]['Swing'],
+            ...weaponOptions[gender]['Thrust']
+        ])
+    ]; // Убираем дубликаты с помощью Set
+
+    allWeapons.forEach(weapon => {
+        const option = document.createElement('option');
+        option.value = weapon;
+        option.text = weapon;
+        weaponSelect.appendChild(option);
+    });
+
+    updatePreview();
 }
